@@ -17,28 +17,111 @@
 
 <body>
 
-  Modern Art Gallery
+  <header class="primary-header">
+    <div class="primary-header__image-container">
+      <picture>
+        <source media="(min-width: 992px)"
+                srcset="./dist/assets/desktop/image-hero.jpg 1x, ./dist/assets/desktop/image-hero@2x.jpg 2x">
+        <source media="(min-width: 768px)"
+                srcset="./dist/assets/tablet/image-hero.jpg 1x, ./dist/assets/tablet/image-hero@2x.jpg 2x">
+        <source srcset="./dist/assets/mobile/image-hero.jpg 1x, ./dist/assets/mobile/image-hero@2x.jpg 2x">
+        <img src="./dist/assets/mobile/image-hero.jpg" alt="A woman and a man looking at a drawing.">
+      </picture>
+    </div>
+    <div class="primary-header__content">
+      <div class="container">
+        <div class="primary-header__text-content">
+          <h1 class="primary-header__heading">Modern Art Gallery</h1>
+          <div class="flow">
+            <p>The arts in the collection of the Modern Art Gallery all started
+              from a spark of inspiration. Will these pieces inspire you? Visit
+              us and find out.</p>
+            <a href="./location.html" class="button">Our location</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  The arts in the collection of the Modern Art Gallery all started
-  from a spark of inspiration. Will these pieces inspire you? Visit
-  us and find out.
+  <main>
+    <div class="container">
+      <section aria-labelledby="gallery-heading" class="gallery">
+        <h2 id="gallery-heading" class="visually-hidden">Our gallery</h2>
+        <div class="gallery-grid">
+          <!-- First row start -->
+          <div class="gallery-grid__row">
+            <picture>
+              <source media="(min-width: 992px)"
+                      srcset="./dist/assets/desktop/image-grid-1.jpg 1x, ./dist/assets/desktop/image-grid-1@2x.jpg 2x">
+              <source media="(min-width: 768px)"
+                      srcset="./dist/assets/tablet/image-grid-1.jpg 1x, ./dist/assets/tablet/image-grid-1@2x.jpg 2x">
+              <source srcset="./dist/assets/mobile/image-grid-1.jpg 1x, ./dist/assets/mobile/image-grid-1@2x.jpg 2x">
+              <img src="./dist/assets/mobile/image-grid-1.jpg" alt="Hall of the gallery with arts on the wall.">
+            </picture>
+            <article class="gallery__text-content gallery__text-content--light">
+              <h3 class="gallery__heading">Your day at the gallery</h3>
+              <p>Wander through our distinct collections and find new insights about
+                our artists. Dive into the details of their creative process.</p>
+            </article>
+          </div>
+          <!-- First row end -->
+          <!-- Second row start -->
+          <div class="gallery-grid__row gallery-grid__row--size-reversed">
+            <picture data-row-span="2">
+              <source media="(min-width: 992px)"
+                      srcset="./dist/assets/desktop/image-grid-2.jpg 1x, ./dist/assets/desktop/image-grid-2@2x.jpg 2x">
+              <source media="(min-width: 768px)"
+                      srcset="./dist/assets/tablet/image-grid-2.jpg 1x, ./dist/assets/tablet/image-grid-2@2x.jpg 2x">
+              <source srcset="./dist/assets/mobile/image-grid-2.jpg 1x, ./dist/assets/mobile/image-grid-2@2x.jpg 2x">
+              <img src="./dist/assets/mobile/image-grid-2.jpg" alt="Single picture art hanging and the wall.">
+            </picture>
+            <picture>
+              <source media="(min-width: 992px)"
+                      srcset="./dist/assets/desktop/image-grid-3.jpg 1x, ./dist/assets/desktop/image-grid-3@2x.jpg 2x">
+              <source media="(min-width: 768px)"
+                      srcset="./dist/assets/tablet/image-grid-3.jpg 1x, ./dist/assets/tablet/image-grid-3@2x.jpg 2x">
+              <source srcset="./dist/assets/mobile/image-grid-3.jpg 1x, ./dist/assets/mobile/image-grid-3@2x.jpg 2x">
+              <img src="./dist/assets/mobile/image-grid-3.jpg" alt="People looking at the paintings.">
+            </picture>
+            <article class="gallery__text-content gallery__text-content--dark">
+              <h3 class="gallery__heading">Come &amp; be inspired</h3>
+              <p>We’re excited to welcome you to our gallery and see how our collections
+                influence you.</p>
+            </article>
+          </div>
+          <!-- Second row end -->
+        </div>
+      </section>
+    </div>
+  </main>
 
-  Our location
+  <footer class="primary-footer primary-footer--dark">
+    <div class="container">
+      <div class="primary-footer__body">
+        <a href="#"><img src="./dist/assets/logo-light.svg" alt="Modern Art Gallery, homepage"></a>
+        <p>The Modern Art Gallery is free to all visitors and open seven days a week
+          from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
+        <ul class="socials-flex">
+          <li>
+            <a aria-label="Facebook" href="#" class="social-link social-link--light">
+              <img src="./dist/assets/icon-facebook.svg" alt="">
+            </a>
+          </li>
+          <li>
+            <a aria-label="Instagram" href="#" class="social-link social-link--light">
+              <img src="./dist/assets/icon-instagram.svg" alt="">
+            </a>
+          </li>
+          <li>
+            <a aria-label="Twitter" href="#" class="social-link social-link--light">
+              <img src="./dist/assets/icon-twitter.svg" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
-  Your day at the gallery
-
-  Wander through our distinct collections and find new insights about
-  our artists. Dive into the details of their creative process.
-
-  Come &amp; be inspired
-
-  We’re excited to welcome you to our gallery and see how our collections
-  influence you.
-
-  Modern Art Gallery
-
-  The Modern Art Gallery is free to all visitors and open seven days a week
-  from 8am to 9pm. Find us at 99 King Street, Newport, USA.
 </body>
 
 </html>
