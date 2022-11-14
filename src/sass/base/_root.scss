@@ -10,6 +10,8 @@
 	}
 
 	/* font families */
+	--ff-primary: 'Outfit', sans-serif;
+	--ff-accent: 'Big Shoulders Display', cursive;
 
 	/* font weights */
 	@each $font-weight, $value in variables.$font-weights {
@@ -31,15 +33,10 @@
 		}
 	}
 
-	/* border radius */
-	@each $radius, $value in variables.$border-radius {
-		--borr-#{$radius}: #{$value};
-	}
-
-	/* spacings */
-	@each $unit, $sizes in variables.$spacings {
+	/* spacers */
+	@each $unit, $sizes in variables.$spacers {
 		@each $size, $value in $sizes {
-			--spacing-#{$unit}-#{$size}: #{$value};
+			--spacer-#{$unit}-#{$size}: #{$value};
 		}
 	}
 }
