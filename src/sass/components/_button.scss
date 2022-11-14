@@ -1,0 +1,41 @@
+.button {
+	--bg-text-container: var(--clr-neutral-700);
+	--bg-icon-container: var(--clr-primary-400);
+	display: inline-flex;
+	/* typography */
+	font-size: var(--fz-500);
+	font-weight: var(--fw-700, 700);
+	font-family: var(--ff-accent);
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.182em;
+	line-height: 1.2;
+	color: var(--clr-neutral-100);
+	/* other */
+	border: none;
+	cursor: pointer;
+
+	&:hover,
+	&:focus,
+	&:focus-visible {
+		--bg-text-container: var(--clr-primary-400);
+		--bg-icon-container: var(--clr-neutral-700);
+	}
+
+	/* container for the icons */
+	&__icon-container {
+		display: inline-grid;
+		place-content: center; // placing icon at the center
+		padding-inline: var(--spacer-rem-300);
+		background-color: var(--bg-icon-container);
+		transition: background-color 0.35s ease;
+	}
+
+	/* container for the text */
+	&__text-container {
+		padding-inline: var(--spacer-em-400);
+		padding-block: var(--spacer-em-300);
+		background-color: var(--bg-text-container);
+		transition: background-color 0.35s ease;
+	}
+}
