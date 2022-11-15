@@ -1,0 +1,53 @@
+@use '../abstracts/mixins' as mxn;
+
+.gallery {
+	padding-block: clamp(12rem, 15vw, 18rem);
+
+	/* make sure that all images take available space */
+	& img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	/* articles */
+	&__text-content {
+		color: var(--clr-gallery-text, black);
+		background-color: var(--bg-gallery-text-content, white);
+
+		&--light {
+			--clr-gallery-text: var(--clr-neutral-400);
+			--clr-gallery-heading: var(--clr-neutral-700);
+			--bg-gallery-text-content: var(--clr-neutral-100);
+
+			padding-block-start: var(--spacer-rem-100);
+			padding-block-end: calc(var(--spacer-rem-100) * 2);
+			@include mxn.mq(small) {
+				padding-inline-end: var(--spacer-rem-200);
+			}
+			@include mxn.mq(medium) {
+				padding-block: clamp(var(--spacer-rem-450, 2em), 4.5vw, var(--spacer-rem-800, 4em));
+				padding-inline-end: clamp(var(--spacer-rem-700, 3.5em), 7vw, var(--spacer-rem-1000, 6em));
+			}
+		}
+
+		&--dark {
+			--clr-gallery-text: var(--clr-neutral-100);
+			--clr-gallery-heading: var(--clr-neutral-100);
+			--bg-gallery-text-content: var(--clr-neutral-700);
+
+			padding-inline: clamp(var(--spacer-rem-300, 1.5em), 3.75vw, var(--spacer-rem-600, 3em));
+			padding-block: clamp(var(--spacer-rem-600, 3em), 5vw, var(--spacer-rem-800, 4em));
+		}
+	}
+
+	&__heading {
+		margin-bottom: var(--spacer-rem-100);
+		font-size: var(--fz-700);
+		line-height: 1;
+		color: var(--clr-gallery-heading, inherit);
+		@include mxn.mq(large) {
+			margin-bottom: calc(var(--spacer-rem-100) * 2);
+		}
+	}
+}

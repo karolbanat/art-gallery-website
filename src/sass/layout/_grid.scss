@@ -1,0 +1,46 @@
+@use '../abstracts/mixins' as mxn;
+
+.gallery-grid {
+	--gallery-spacer: var(--spacer-rem-200);
+	display: grid;
+	gap: var(--gallery-spacer);
+	@include mxn.mq(small) {
+		--gallery-spacer: var(--spacer-rem-100);
+
+		& [data-row-span='2'] {
+			grid-row: span 2;
+		}
+	}
+	@include mxn.mq(large) {
+		--gallery-spacer: var(--spacer-rem-375);
+	}
+
+	&__row {
+		--column-width: 57.2%;
+		display: grid;
+		gap: var(--gallery-spacer);
+		@include mxn.mq(small) {
+			grid-template-columns: 1fr var(--column-width);
+
+			/* moves the article to the left, and image to the right */
+			&[data-order='reversed'] {
+				& > :last-child {
+					grid-column: 1;
+					grid-row: 1;
+				}
+			}
+
+			/* reverses the sizing of the columns of the 'normal' row */
+			&--size-reversed {
+				grid-template-columns: var(--column-width) 1fr;
+				grid-template-rows: min-content 1fr;
+			}
+		}
+	}
+}
+
+/* vertically aligns items in the middle */
+.grid-align-center {
+	display: grid;
+	align-content: center;
+}

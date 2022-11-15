@@ -54,7 +54,7 @@
         <h2 id="gallery-heading" class="visually-hidden">Our gallery</h2>
         <div class="gallery-grid">
           <!-- First row start -->
-          <div class="gallery-grid__row">
+          <div class="gallery-grid__row" data-order="reversed">
             <picture>
               <source media="(min-width: 992px)"
                       srcset="./dist/assets/desktop/image-grid-1.jpg 1x, ./dist/assets/desktop/image-grid-1@2x.jpg 2x">
@@ -88,7 +88,7 @@
               <source srcset="./dist/assets/mobile/image-grid-3.jpg 1x, ./dist/assets/mobile/image-grid-3@2x.jpg 2x">
               <img src="./dist/assets/mobile/image-grid-3.jpg" alt="People looking at the paintings.">
             </picture>
-            <article class="gallery__text-content gallery__text-content--dark">
+            <article class="gallery__text-content gallery__text-content--dark | grid-align-center">
               <h3 class="gallery__heading">Come &amp; be inspired</h3>
               <p>We’re excited to welcome you to our gallery and see how our collections
                 influence you.</p>
