@@ -39,4 +39,6 @@
 			--spacer-#{$unit}-#{$size}: #{$value};
 		}
 	}
+
+	--container-spacer: clamp(var(--spacer-rem-200, 1em), -1.75rem + 7.5vw, var(--spacer-rem-500, 3em));
 }

@@ -1,15 +1,81 @@
 @use '../abstracts/mixins' as mxn;
+@use '../layout/container';
 
 .primary-header {
+	--text-content-spacer: var(--spacer-rem-400);
+	display: grid;
+	gap: var(--spacer-rem-400);
+	@include mxn.mq(medium) {
+		--text-content-spacer: var(--spacer-rem-600);
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@include mxn.mq(large) {
+		--text-content-spacer: var(--spacer-rem-800);
+		grid-template-columns: 1fr;
+		background-image: linear-gradient(to right, black 0%, black 50%, white 50%, white 100%);
+	}
+
+	/* container for the image */
 	&__image-container {
+		display: grid;
+		justify-content: center;
+		@include mxn.mq(medium) {
+			justify-content: start;
+			/* span all columns of the first row */
+			grid-column: 1 / -1;
+			grid-row: 1;
+		}
+		@include mxn.mq(large) {
+			justify-content: center;
+			/* make only one column */
+			grid-column: 1;
+		}
 	}
 
+	&__container {
+		@extend .container;
+		@include mxn.mq(medium) {
+			--padding-inline: 0; // override .containers variable
+			/* be on the second column and the first row (the same as image) */
+			grid-column: 2;
+			grid-row: 1;
+			padding-block: clamp(14.5rem, 15vw, 18rem);
+			padding-inline-end: var(--container-spacer);
+		}
+		@include mxn.mq(large) {
+			--padding-inline: var(--container-spacer); // bring back 'default' value
+			/* be on the same cell as image container (first row and column) */
+			grid-column: 1;
+			grid-row: 1;
+			padding-inline-end: 0;
+		}
+	}
+
+	/* container for the heading, text and button */
 	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--text-content-spacer);
+		@include mxn.mq(large) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
 	}
 
+	/* text and button container */
 	&__text-content {
+		@include mxn.mq(large) {
+			max-width: 35rem;
+		}
 	}
 
 	&__heading {
+		font-size: var(--fz-900);
+		line-height: 0.9166;
+		color: var(--clr-neutral-700);
+		@include mxn.mq(large) {
+			color: var(--clr-neutral-100);
+			mix-blend-mode: difference;
+		}
 	}
 }
