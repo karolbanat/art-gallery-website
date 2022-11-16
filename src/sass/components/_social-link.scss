@@ -1,0 +1,18 @@
+.social-link {
+	&__icon {
+		fill: var(--social-icon-fill);
+	}
+
+	&:is(:hover, :focus, :focus-visible) {
+		--social-icon-fill: var(--social-icon-fill-hover);
+	}
+
+	&--light {
+		--social-icon-fill: var(--clr-neutral-100);
+		--social-icon-fill-hover: var(--clr-primary-400);
+	}
+	&--dark {
+		--social-icon-fill: var(--clr-neutral-700);
+		--social-icon-fill-hover: var(--clr-neutral-100);
+	}
+}
