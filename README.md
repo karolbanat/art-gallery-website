@@ -4,8 +4,8 @@ This is a solution to the [Art gallery website challenge on Frontend Mentor](htt
 
 ## Links
 
-- Solution URL: [Frontend Mentor Solution Page](https://your-solution-url.com)
-- Live Site URL: [GitHub Pages Site](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor Solution Page](https://www.frontendmentor.io/solutions/art-gallery-website-Gmsc6i7UVF)
+- Live Site URL: [GitHub Pages Site](https://karolbanat.github.io/art-gallery-website/)
 
 ## Useful resources
 
