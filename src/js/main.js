@@ -8,9 +8,9 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 const markerIcon = L.icon({
-	iconUrl: './dist/assets/map-marker.png',
-	iconSize: [35, 45],
-	iconAnchor: [0, 50],
+	iconUrl: './dist/assets/icon-location.svg',
+	iconSize: [66, 88],
+	iconAnchor: [20, 86],
 });
 
 const marker = L.marker([latitude, longitude], { icon: markerIcon }).addTo(map);
