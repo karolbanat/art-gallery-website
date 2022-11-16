@@ -3,6 +3,11 @@
 
 .primary-header {
 	--text-content-spacer: var(--spacer-rem-400);
+	--layer-1: 5000;
+	--layer-2: 4000;
+	--layer-3: 3000;
+	--layer-4: 2000;
+
 	display: grid;
 	gap: var(--spacer-rem-400);
 	@include mxn.mq(medium) {
@@ -12,7 +17,6 @@
 	@include mxn.mq(large) {
 		--text-content-spacer: var(--spacer-rem-800);
 		grid-template-columns: 1fr;
-		background-image: linear-gradient(to right, black 0%, black 50%, white 50%, white 100%);
 	}
 
 	/* container for the image */
@@ -26,13 +30,29 @@
 			grid-row: 1;
 		}
 		@include mxn.mq(large) {
+			position: relative;
+			justify-self: center;
 			justify-content: center;
 			/* make only one column */
 			grid-column: 1;
+
+			/* black 'background' to the left of the image */
+			&::before {
+				content: '';
+				position: absolute;
+				z-index: var(--layer-2);
+				background-color: var(--clr-neutral-700);
+				height: 100%;
+				width: 100vmax;
+				left: 0;
+				top: 0;
+				transform: translateX(-100%);
+			}
 		}
 	}
 
 	&__container {
+		position: relative; // so content does not hide behind image container
 		@extend .container;
 		@include mxn.mq(medium) {
 			--padding-inline: 0; // override .containers variable
@@ -69,13 +89,53 @@
 		}
 	}
 
+	/* for the title layers */
+	&__title-container {
+		position: relative;
+
+		/* every layer except first (h1) will be positioned behind, absolutely */
+		& > :not(:first-child) {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
 	&__heading {
+		font-weight: var(--fw-700, 700);
+		font-family: var(--ff-accent);
 		font-size: var(--fz-900);
+		text-transform: uppercase;
 		line-height: 0.9166;
 		color: var(--clr-neutral-700);
+
+		/* hide other layers other than first, as they are only needed for bigger screens */
+		&:not([data-layer='1']) {
+			display: none;
+		}
+
 		@include mxn.mq(large) {
-			color: var(--clr-neutral-100);
-			mix-blend-mode: difference;
+			&[data-layer='1'] {
+				position: relative; // to control z-index
+				z-index: var(--layer-1);
+				color: var(--clr-neutral-100);
+				mix-blend-mode: difference;
+			}
+
+			/* show other layers */
+			&:not([data-layer='1']) {
+				display: block;
+			}
+
+			&[data-layer='2'] {
+				z-index: var(--layer-3);
+				color: var(--clr-neutral-100);
+			}
+
+			&[data-layer='3'] {
+				z-index: var(--layer-4);
+				color: var(--clr-neutral-700);
+			}
 		}
 	}
 }
