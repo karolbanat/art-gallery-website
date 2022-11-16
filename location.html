@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;900&family=Outfit:wght@300;400&display=swap"
         rel="stylesheet">
+  <!-- https://leafletjs.com/ -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
   <link rel="stylesheet" href="./dist/css/main.min.css">
 
   <title>Frontend Mentor | Art gallery website</title>
@@ -19,7 +22,7 @@
 
   <main>
     <div id="map-art-gallery" class="map-container">
-      <a href="./index.html" class="button">
+      <a href="./index.html" class="button map-container__button">
         <span class="button__icon-container">
           <img src="./dist/assets/icon-arrow-left.svg" alt="">
         </span>
@@ -85,6 +88,10 @@
       </div>
     </div>
   </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+          integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+  <script src="./dist/js/main.min.js"></script>
 </body>
 
 </html>

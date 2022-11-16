@@ -1,0 +1,23 @@
+@use '../abstracts/mixins' as mxn;
+
+.map-container {
+	position: relative;
+	height: 55rem;
+	max-height: 95vh; //to prevent the map taking whole screen
+	@include mxn.mq(medium) {
+		height: 60rem;
+	}
+
+	&__button {
+		position: absolute;
+		z-index: 9999;
+		top: 0;
+		left: 15%;
+		@include mxn.mq(medium) {
+			left: 8rem;
+		}
+		@include mxn.mq(large) {
+			left: 15.6rem;
+		}
+	}
+}
