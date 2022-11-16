@@ -1,0 +1,15 @@
+@use '../abstracts/mixins' as mxn;
+
+.address {
+	font-style: normal;
+
+	&__street {
+		margin-bottom: var(--spacer-em-200);
+		font-size: var(--fz-600);
+		font-family: var(--ff-accent);
+		font-weight: var(--fw-700, 700);
+		text-transform: uppercase;
+		line-height: 1;
+		color: var(--clr-primary-400);
+	}
+}

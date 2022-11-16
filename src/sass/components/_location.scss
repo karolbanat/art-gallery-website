@@ -1,0 +1,37 @@
+@use '../abstracts/mixins' as mxn;
+
+.location {
+	padding-block-start: clamp(var(--spacer-rem-600, 3em), 11.5vw, 10.4rem);
+	padding-block-end: clamp(var(--spacer-rem-700, 3.5em), 10.5vw, 12.8rem);
+	color: var(--clr-neutral-100);
+	background-color: var(--clr-neutral-700);
+
+	&__body {
+		display: grid;
+		gap: var(--spacer-rem-600);
+		@include mxn.mq(medium) {
+			grid-template-columns: 1fr auto;
+			gap: var(--spacer-rem-1000);
+		}
+		@include mxn.mq(large) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--spacer-rem-375);
+		}
+	}
+
+	&__heading {
+		font-size: var(--fz-800);
+		line-height: 1;
+		@include mxn.mq(medium) {
+			max-width: 8ch;
+		}
+	}
+
+	&__content {
+		display: grid;
+		gap: var(--spacer-rem-250);
+		@include mxn.mq(large) {
+			gap: var(--spacer-rem-400);
+		}
+	}
+}
