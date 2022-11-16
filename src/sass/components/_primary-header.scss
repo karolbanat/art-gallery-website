@@ -129,12 +129,13 @@
 
 			&[data-layer='2'] {
 				z-index: var(--layer-3);
-				color: var(--clr-neutral-100);
+				color: var(--clr-neutral-700);
+				mix-blend-mode: difference;
 			}
 
 			&[data-layer='3'] {
 				z-index: var(--layer-4);
-				color: var(--clr-neutral-700);
+				color: var(--clr-neutral-100);
 			}
 		}
 	}
